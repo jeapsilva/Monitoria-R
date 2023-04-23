@@ -104,10 +104,13 @@ class(base_dados2$activation_score)               # tipo numérico
 t.test(base_dados2$activation_score,base_dados2$Disease)              # teste t não pareado
 t.test(base_dados2$activation_score,base_dados2$Disease,paired=TRUE)  # teste t pareado
 
-wilcox.test(base_dados2$activation_score,base_dados2$Disease)
-wilcox.test(base_dados2$activation_score,base_dados2$Disease,paired=TRUE, alternative="two.sided")
+wilcox.test(base_dados2$activation_score,base_dados2$Disease)                                          # teste wilcox não pareado
+wilcox.test(base_dados2$activation_score,base_dados2$Disease,paired=TRUE, alternative="two.sided")     # teste wilcox pareado
 
-# fazendo uma selecao na base de dados
+# fazendo uma selecao na base de dados 
+# aqui vamos fazer a seleção da base de dados de acordo com a presença da doença (2=COPD e 4=CRD)
 selecao_doencas = filter(base_dados2,Disease==2 | Disease==4)
+
+# fazendo o teste para esse conjunto de dados filtrados
 t.test(selecao_doencas$activation_score,selecao_doencas$Disease)
 
