@@ -109,8 +109,12 @@ wilcox.test(base_dados2$activation_score,base_dados2$Disease,paired=TRUE, altern
 
 # fazendo uma selecao na base de dados 
 # aqui vamos fazer a seleção da base de dados de acordo com a presença da doença (2=COPD e 4=CRD)
+
+#modo 1
+g2 = subset(base_dados2,base_dados2$Disease == 2 | base_dados2$Disease == 4)
+
+#modo 2
 selecao_doencas = filter(base_dados2,Disease==2 | Disease==4)
 
 # fazendo o teste para esse conjunto de dados filtrados
 t.test(selecao_doencas$activation_score,selecao_doencas$Disease)
-
