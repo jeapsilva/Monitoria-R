@@ -7,7 +7,7 @@ install.packages("car")
 library("car")
 install.packages("reshape2")
 library("reshape2")
-install.packages("rstatix")/
+install.packages("rstatix")
 library("rstatix")
 install.packages("ggplot2")
 library("ggplot2")
